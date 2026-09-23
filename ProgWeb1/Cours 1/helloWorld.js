@@ -42,12 +42,9 @@ console.log(compareB(8, 'huit')); // false
 
 // exo 4
 function getNumber(n) {
-    for (let i = 0; i < n; i += 2) {
-        console.log(i);
-    }
-
-    for (let i = 0; i < n; i += 2 && i % 7) {
-        console.log(i);
+    for (let i = 0; i < n; i++) {
+        if (i % 2 == 0 && i % 7 == 0)
+            console.log(i);
     }
 
 
