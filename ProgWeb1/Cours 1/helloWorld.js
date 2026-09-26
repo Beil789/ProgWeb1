@@ -1,4 +1,4 @@
-// exo 3
+// exo 1
 function getMax(a, b, c) {
     if (a > b && a > c)
         return a;
@@ -67,3 +67,18 @@ function nombreDePilesOuFaces(n) {
 
 const resultat = nombreDePilesOuFaces(10); // ici on appelle la fonction nombreDePilesOuFaces avec 10 lancers de pièce, et on stocke le résultat dans la variable resultat.
 console.log(resultat); // on affiche le résultat dans la console.
+
+// exo 6 - à revoir
+function estPremier(n) {
+    if (!Number.isInteger(n) || n < 2) { //On vérifie si n est un entier et supérieur ou égal à 2, sinon on retourne false. Number.isInteger est une méthode intégrée à JavaScript qui sert à vérifier si une valeur est un entier.
+return false;
+
+    }
+    for (let diviseur = 2; diviseur < n; diviseur++) 
+        // On commence avec 2, car 1 divise tous les nombres et permet pas de savoir si un nombre est premier. La boucle continue tant que diviseur est inférieur à n. On incrémente diviseur de 1 à chaque itération.
+        if (n % diviseur === 0) { // Si n est divisible par diviseur (c'est-à-dire que le reste de la division de n par diviseur est égal à 0), alors n n'est pas premier, comme expliquer juste après.
+            return false; // arrête immédiatement la fonction et indique que le nombre n’est pas premier. En effet, un nombre premier ne doit être divisible que par 1 et par lui-même.
+        }
+    return true; // si aucun diviseur n'a été trouvé, le nombre est premier.
+}
+console.log(estPremier(87178291199)) // true
