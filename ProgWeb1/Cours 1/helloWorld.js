@@ -82,3 +82,21 @@ return false;
     return true; // si aucun diviseur n'a été trouvé, le nombre est premier.
 }
 console.log(estPremier(87178291199)) // true
+
+// exo 7
+
+ // Ecrire une fonction nommée cl qui affiche dans la console, ligne après ligne, toutes les données fournies en paramètre. Exemple d'appel:
+// cl(1, 2 ,"a", [3.1, 4, 159]);
+
+function cl (a, b ,c, [d, e, f]) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
+    console.log(e);
+    console.log(f);
+}
+cl(1, 2 ,"a", [3.1, 4, 159]); 
+// On appelle la fonction cl avec les paramètres 1, 2, "a" et un tableau contenant 3.1, 4 et 159. La fonction affiche chaque paramètre sur une ligne séparée dans la console.
+// Si on ne met pas console.log(), c'est parce que sinon la fonction ne ferait qu'afficher le résultat de l'appel de la fonction cl dans la console, mais pas les valeurs des paramètres. En utilisant console.log() à l'intérieur de la fonction, on peut afficher chaque paramètre individuellement.
+// Si elle est à l'extérieur c'est pour pouvoir réutiliser la fonction cl avec différents paramètres sans avoir à réécrire le code à chaque fois.
