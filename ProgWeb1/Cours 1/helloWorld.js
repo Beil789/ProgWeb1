@@ -61,7 +61,7 @@ function nombreDePilesOuFaces(n) {
     }
     console.log(" Nombre de piles obtenus : " + piles);
     console.log(" Nombre de faces obtenus : " + faces);
-    return {piles, faces}; // on retourne un objet contenant le nombre de piles et de faces obtenus, c'est nécessaire pour pouvoir utiliser ces valeurs dans d'autres parties du code si besoin.
+    return { piles, faces }; // on retourne un objet contenant le nombre de piles et de faces obtenus, c'est nécessaire pour pouvoir utiliser ces valeurs dans d'autres parties du code si besoin.
 
 }
 
@@ -71,10 +71,10 @@ console.log(resultat); // on affiche le résultat dans la console.
 // exo 6 - à revoir
 function estPremier(n) {
     if (!Number.isInteger(n) || n < 2) { //On vérifie si n est un entier et supérieur ou égal à 2, sinon on retourne false. Number.isInteger est une méthode intégrée à JavaScript qui sert à vérifier si une valeur est un entier.
-return false;
+        return false;
 
     }
-    for (let diviseur = 2; diviseur < n; diviseur++) 
+    for (let diviseur = 2; diviseur < n; diviseur++)
         // On commence avec 2, car 1 divise tous les nombres et permet pas de savoir si un nombre est premier. La boucle continue tant que diviseur est inférieur à n. On incrémente diviseur de 1 à chaque itération.
         if (n % diviseur === 0) { // Si n est divisible par diviseur (c'est-à-dire que le reste de la division de n par diviseur est égal à 0), alors n n'est pas premier, comme expliquer juste après.
             return false; // arrête immédiatement la fonction et indique que le nombre n’est pas premier. En effet, un nombre premier ne doit être divisible que par 1 et par lui-même.
@@ -85,10 +85,10 @@ console.log(estPremier(87178291199)) // true
 
 // exo 7
 
- // Ecrire une fonction nommée cl qui affiche dans la console, ligne après ligne, toutes les données fournies en paramètre. Exemple d'appel:
+// Ecrire une fonction nommée cl qui affiche dans la console, ligne après ligne, toutes les données fournies en paramètre. Exemple d'appel:
 // cl(1, 2 ,"a", [3.1, 4, 159]);
 
-function cl (a, b ,c, [d, e, f]) {
+function cl(a, b, c, [d, e, f]) {
     console.log(a);
     console.log(b);
     console.log(c);
@@ -96,7 +96,24 @@ function cl (a, b ,c, [d, e, f]) {
     console.log(e);
     console.log(f);
 }
-cl(1, 2 ,"a", [3.1, 4, 159]); 
+cl(1, 2, "a", [3.1, 4, 159]);
 // On appelle la fonction cl avec les paramètres 1, 2, "a" et un tableau contenant 3.1, 4 et 159. La fonction affiche chaque paramètre sur une ligne séparée dans la console.
 // Si on ne met pas console.log(), c'est parce que sinon la fonction ne ferait qu'afficher le résultat de l'appel de la fonction cl dans la console, mais pas les valeurs des paramètres. En utilisant console.log() à l'intérieur de la fonction, on peut afficher chaque paramètre individuellement.
 // Si elle est à l'extérieur c'est pour pouvoir réutiliser la fonction cl avec différents paramètres sans avoir à réécrire le code à chaque fois.
+
+// exo 8
+
+function double(n) {
+    return n * 2;
+}
+
+function square(n) {
+    return n * n
+}
+
+function transform(n, fn) { // Une fonction nommée transform qui prend deux paramètres : n (un nombre) et fn (une fonction). 
+    return fn(n); // Elle retourne le résultat de l'application de la fonction fn sur n.
+}
+
+transform(5, double); // Retourne 10, car la fonction double est appliquée à 5.
+transform(5, square); // Retourne 25, car la fonction square est appliquée à 5.
