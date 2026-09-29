@@ -117,3 +117,17 @@ function transform(n, fn) { // Une fonction nommée transform qui prend deux par
 
 transform(5, double); // Retourne 10, car la fonction double est appliquée à 5.
 transform(5, square); // Retourne 25, car la fonction square est appliquée à 5.
+
+// exo 9
+
+function repeatTransform(n, fn, repetitions) { // Une fonction nommée repeatTransform qui prend trois paramètres : n (un nombre), fn (une fonction) et repetitions (un nombre indiquant combien de fois appliquer la fonction fn), ce sont des variable locales.
+    let result = n; // On initialise une variable result avec la valeur de n. Cette variable servira à stocker le résultat intermédiaire après chaque application de la fonction fn.
+
+    for (let i = 0; i < repetitions; i++) { // Une boucle for qui s'exécute un nombre de fois égal à repetitions. 
+        result = fn(result); // À chaque itération, on applique la fonction fn au résultat actuel.
+    }
+
+    return result; // Après avoir appliqué la fonction fn le nombre de fois spécifié, on retourne le résultat final.
+}
+
+console.log(repeatTransform(2, double, 3)); // 16
